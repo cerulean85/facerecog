@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_barcode_scan"
+        android:enabled="false"
+        android:visible="false"
+        android:icon="@drawable/ic_barcode_scanner"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/action_face_detect"
+        android:icon="@drawable/ic_face"
+        android:enabled="false"
+        android:visible="false"
+        android:title="@null" />
+
+    <item
+        android:enabled="false"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/action_object_detect"
+        android:enabled="false"
+        android:visible="false"
+        android:icon="@drawable/ic_objects"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/action_ocr"
+        android:enabled="false"
+        android:visible="false"
+        android:icon="@drawable/ic_ocr"
+        android:title="@null" />
+
+</menu>
