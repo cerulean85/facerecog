@@ -31,7 +31,7 @@ def postJsonHandler():
     return "Success"
 
 if __name__ == "__main__":
-    ip = socket.gethostbyname(socket.getfqdn())
+    ip = "0.0.0.0"
     port = 5000
     print("Connected Host: {}".format(ip))
     app.run(host=ip, port=port, debug=True)
