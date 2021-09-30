@@ -17,6 +17,9 @@ import java.lang.Object;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
   @NonNull
+  public final Button btnConfirmInfo;
+
+  @NonNull
   public final Button btnFaceEnroll;
 
   @NonNull
@@ -26,8 +29,9 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   protected MainViewModel mViewModel;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnFaceEnroll, Button btnFaceRecog) {
+      Button btnConfirmInfo, Button btnFaceEnroll, Button btnFaceRecog) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.btnConfirmInfo = btnConfirmInfo;
     this.btnFaceEnroll = btnFaceEnroll;
     this.btnFaceRecog = btnFaceRecog;
   }

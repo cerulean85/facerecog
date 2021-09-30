@@ -1,0 +1,219 @@
+Found /lib/x86_64-linux-gnu/libproj.so.15
+
+(mysql-workbench-bin:57608): Gdk-CRITICAL **: 21:32:14.217: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:32:49.426: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:33:33.568: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:33:39.517: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:34:14.214: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:34:28.101: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:01.573: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:25.824: gtk_cell_layout_get_area: assertion 'GTK_IS_CELL_LAYOUT (cell_layout)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:25.824: gtk_cell_area_get_edit_widget: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:25.824: gtk_cell_area_get_cell_at_position: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:25.845: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:35:33.120: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:36:47.777: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:37:31.257: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:37:46.208: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:38:33.184: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:38:40.011: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:39:13.489: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gdk-CRITICAL **: 21:39:18.849: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:39:28.031: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:39:41.899: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:39:58.570: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:40:03.204: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:40:04.757: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:40:57.890: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:22.164: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:40.996: gtk_cell_layout_get_area: assertion 'GTK_IS_CELL_LAYOUT (cell_layout)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:40.996: gtk_cell_area_get_edit_widget: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:40.996: gtk_cell_area_get_cell_at_position: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:41.018: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:42.437: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:41:54.364: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:42:03.620: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:42:39.653: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:42:50.807: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:43:11.088: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gdk-CRITICAL **: 21:43:15.635: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:43:22.017: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:43:30.527: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:43:38.453: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:01.767: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gdk-CRITICAL **: 21:44:05.309: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:11.453: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:19.058: gtk_cell_layout_get_area: assertion 'GTK_IS_CELL_LAYOUT (cell_layout)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:19.058: gtk_cell_area_get_edit_widget: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:19.058: gtk_cell_area_get_cell_at_position: assertion 'GTK_IS_CELL_AREA (area)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:19.083: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:44:20.342: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:46:36.788: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:46:46.696: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:46:53.322: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:52:13.231: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:52:29.309: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:52:50.142: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:53:01.500: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:01.509: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:03.273: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:04.259: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:05.137: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:06.626: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:07.492: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:09.491: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:12.608: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 21:53:13.490: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:54:26.380: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:54:46.032: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.685: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.685: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.685: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.686: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.686: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:54:53.686: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:54:53.687: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:53.688: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.825: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.825: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.825: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.826: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.952: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.952: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.952: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.953: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.953: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:54:59.957: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.698: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.698: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.698: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.698: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.698: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gdk-WARNING **: 21:55:02.703: Event with type 8 not holding a GdkDevice. It is most likely synthesized outside Gdk/GTK+
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:55:09.410: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 21:55:23.654: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:18:03.543: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:18:05.727: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:18:05.727: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:34:34.923: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:34:38.920: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:34:59.408: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:35:29.669: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:35:32.637: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:35:52.998: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:35:55.808: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:38:51.883: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:39:30.184: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:39:41.384: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:39:48.950: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:40:00.158: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:40:08.345: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:40:19.012: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed

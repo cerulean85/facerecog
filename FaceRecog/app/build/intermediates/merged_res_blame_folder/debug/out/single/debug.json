@@ -36,6 +36,14 @@
         "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/mipmap-hdpi/ic_macgyver_foreground.png"
     },
     {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/merged_res/debug/layout_activity_profile_input.xml.flat",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_profile_input.xml"
+    },
+    {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/merged_res/debug/layout_activity_profile_info.xml.flat",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_profile_info.xml"
+    },
+    {
         "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_macgyver_round.png.flat",
         "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/mipmap-mdpi/ic_macgyver_round.png"
     },

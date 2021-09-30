@@ -2001,6 +2001,8 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btn_confirm_info
+id btn_enroll_user_info
 id btn_face_enroll
 id btn_face_recog
 id buttonPanel
@@ -2078,6 +2080,7 @@ id easeInOut
 id easeOut
 id east
 id edit_query
+id edit_user_name
 id elastic
 id end
 id endToStart
@@ -2136,10 +2139,15 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id iv_captured_user_profile
+id iv_enrolled_user_profile
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_v_user_info
+id lb_enroll
+id lb_enroll_info
 id left
 id leftToRight
 id legacy
@@ -2368,6 +2376,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_enrolled_name
+id tv_enrolled_uuid
+id tv_uuid
 id unchecked
 id uniform
 id unlabeled
@@ -2460,6 +2471,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_profile_info
+layout activity_profile_input
 layout activity_recog
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

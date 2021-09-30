@@ -26,13 +26,15 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[2]
+            , (android.widget.Button) bindings[3]
             , (android.widget.Button) bindings[1]
+            , (android.widget.Button) bindings[2]
             );
+        this.btnConfirmInfo.setTag(null);
         this.btnFaceEnroll.setTag(null);
         this.btnFaceRecog.setTag(null);
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
@@ -114,6 +116,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
+            this.btnConfirmInfo.setOnClickListener(viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener);
             this.btnFaceEnroll.setOnClickListener(viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener);
             this.btnFaceRecog.setOnClickListener(viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener);
         }

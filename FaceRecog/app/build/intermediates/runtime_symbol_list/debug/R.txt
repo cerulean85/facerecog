@@ -2000,6 +2000,8 @@ int id browser_actions_menu_item_icon 0x7f08006a
 int id browser_actions_menu_item_text 0x7f08006b
 int id browser_actions_menu_items 0x7f08006c
 int id browser_actions_menu_view 0x7f08006d
+int id btn_confirm_info 0x7f0801f4
+int id btn_enroll_user_info 0x7f0801f5
 int id btn_face_enroll 0x7f08006e
 int id btn_face_recog 0x7f08006f
 int id buttonPanel 0x7f080070
@@ -2077,6 +2079,7 @@ int id easeInOut 0x7f0800b7
 int id easeOut 0x7f0800b8
 int id east 0x7f0800b9
 int id edit_query 0x7f0800ba
+int id edit_user_name 0x7f0801f6
 int id elastic 0x7f0800bb
 int id end 0x7f0800bc
 int id endToStart 0x7f0800bd
@@ -2135,10 +2138,15 @@ int id invisible 0x7f0800f1
 int id inward 0x7f0800f2
 int id italic 0x7f0800f3
 int id item_touch_helper_previous_elevation 0x7f0800f4
+int id iv_captured_user_profile 0x7f0801f7
+int id iv_enrolled_user_profile 0x7f0801f8
 int id jumpToEnd 0x7f0800f5
 int id jumpToStart 0x7f0800f6
 int id labeled 0x7f0800f7
 int id layout 0x7f0800f8
+int id layout_v_user_info 0x7f0801f9
+int id lb_enroll 0x7f0801fa
+int id lb_enroll_info 0x7f0801fb
 int id left 0x7f0800f9
 int id leftToRight 0x7f0800fa
 int id legacy 0x7f0800fb
@@ -2367,6 +2375,9 @@ int id transition_position 0x7f0801d9
 int id transition_scene_layoutid_cache 0x7f0801da
 int id transition_transform 0x7f0801db
 int id triangle 0x7f0801dc
+int id tv_enrolled_name 0x7f0801fc
+int id tv_enrolled_uuid 0x7f0801fd
+int id tv_uuid 0x7f0801fe
 int id unchecked 0x7f0801dd
 int id uniform 0x7f0801de
 int id unlabeled 0x7f0801df
@@ -2459,6 +2470,8 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
+int layout activity_profile_info 0x7f0b0074
+int layout activity_profile_input 0x7f0b0075
 int layout activity_recog 0x7f0b001d
 int layout browser_actions_context_menu_page 0x7f0b001e
 int layout browser_actions_context_menu_row 0x7f0b001f

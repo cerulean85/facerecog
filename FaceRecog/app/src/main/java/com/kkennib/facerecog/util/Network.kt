@@ -28,6 +28,10 @@ class Network {
 
         fun sendBoundingBoxPosition(image: Image, boundingBox: Rect) {
 
+            Log.d("Network","BoundingBox: ${boundingBox.top}, ${boundingBox.bottom}, ${boundingBox.left}, " +
+                    "${boundingBox.right}, ${boundingBox.width()}, ${boundingBox.height()}")
+
+
 
 
 //            var file = File("$galleryPath/$ts.jpg")
@@ -41,15 +45,17 @@ class Network {
 //            } catch (e: Exception) {
 //                e.printStackTrace()
 //            }
-
+            /** Server Transfer **/
             var serialized = ""
-//            var byteArray = byteArrayOf()
             val job = GlobalScope.launch() {
                 var bitmap = mediaImageToBitmap(image)
                 if (bitmap != null) {
                     val matrix = Matrix()
                     matrix.postRotate(-90f)
                     bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+                    print("${bitmap.width}, ${bitmap.height}")
+
+                    bitmap = Bitmap.createBitmap(bitmap, boundingBox.left, boundingBox.top, boundingBox.width(), boundingBox.height())
                 }
 
                 val ostream = ByteArrayOutputStream()
@@ -67,6 +73,7 @@ class Network {
                         val data = PostData(MainActivity.uuid, serialized)
                         val client = OkHttpClient()
                         val url = "http://192.168.219.101:5000/test"
+//                        val url = "http://15.165.101.124:5000/test"
                         val gson = Gson()
                         val json = gson.toJson(data)
 
@@ -96,7 +103,7 @@ class Network {
                 }
 
             }
-
+            /** Server Transfer **/
 
 //            thread(start = true) {
 
