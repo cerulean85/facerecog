@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello World123333423r23r444"
+    return "This is Test Page"
 
 @app.route('/test', methods = ["POST"])
 def postJsonHandler():

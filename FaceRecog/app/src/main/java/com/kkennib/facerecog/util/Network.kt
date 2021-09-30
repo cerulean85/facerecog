@@ -66,7 +66,7 @@ class Network {
                     try {
                         val data = PostData(MainActivity.uuid, serialized)
                         val client = OkHttpClient()
-                        val url = "http://218.150.182.180:5000/test"
+                        val url = "http://192.168.219.101:5000/test"
                         val gson = Gson()
                         val json = gson.toJson(data)
 
