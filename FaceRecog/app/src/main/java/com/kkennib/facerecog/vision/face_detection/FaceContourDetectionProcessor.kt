@@ -48,12 +48,12 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay) :
     ) {
         graphicOverlay.clear()
         results.forEach {
-            Network.sendBoundingBoxPosition(image, it.boundingBox)
+//            Network.sendBoundingBoxPosition(image, it.boundingBox)
             val faceGraphic = FaceContourGraphic(graphicOverlay, it, rect)
             graphicOverlay.add(faceGraphic)
         }
         graphicOverlay.postInvalidate()
-        stop()
+//        stop()
     }
 
     override fun onFailure(e: Exception) {
