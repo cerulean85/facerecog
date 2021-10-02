@@ -7,4 +7,9 @@
         <attr name="cradle_vertical_offset" format="dimension"/>
         <attr name="fab_size" format="dimension"/>
     </declare-styleable>
+    <style name="custom_button" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">64dp</item>
+    </style>
 </resources>

@@ -20,18 +20,23 @@ class UserFace(db.Model):
     user_id = db.Column(db.Integer, nullable=False)
     face_img = db.Column(db.BLOB, nullable=True)
 
-user = User(uuid='kefjkl', name='popop')
-db.session.add(user)
-db.session.flush()
-id = user.id
-print(id)
-db.session.commit()
+# user = User(uuid='kefjkl', name='popop')
+# db.session.add(user)
+# db.session.flush()
+# id = user.id
+# print(id)
+# db.session.commit()
 
 
 # result = UserProfile.query.all()
+# print("Result: ", result)
 # for item in result:
 #     print(item.id, item.user_id, item.profile_img)
 #
 # result = UserFace.query.all()
 # for item in result:
 #     print(item.id, item.user_id, item.face_img)
+
+user_info = User.query.filter_by(uuid="tmp_uuid2").first()
+print(user_info)
+# is_success = len(user_info) > 0

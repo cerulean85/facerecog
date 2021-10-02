@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_enrolluser.xml",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_enrolluser.xml"
+    },
+    {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_recog.xml",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_recog.xml"
+    }
+]

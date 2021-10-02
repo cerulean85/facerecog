@@ -217,3 +217,11 @@ Found /lib/x86_64-linux-gnu/libproj.so.15
 (mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:40:08.345: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
 
 (mysql-workbench-bin:57608): Gtk-CRITICAL **: 22:40:19.012: gtk_tree_view_unref_tree_helper: assertion 'node != NULL' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 23:19:50.757: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 23:19:50.770: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 23:19:50.786: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(mysql-workbench-bin:57608): GLib-GObject-CRITICAL **: 23:19:50.800: g_object_unref: assertion 'G_IS_OBJECT (object)' failed

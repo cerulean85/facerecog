@@ -4,7 +4,8 @@ import cv2
 import numpy as np
 import face_recognition
 
-def detect():
+tolerance = 0.6
+def detect(target_face, known_faces):
     imgBillGates = face_recognition.load_image_file('billGates.jpg')
     imgZHKim1 = face_recognition.load_image_file('zhkim1.jpg')
     imgZHKim2 = face_recognition.load_image_file('zhkim2.jpg')

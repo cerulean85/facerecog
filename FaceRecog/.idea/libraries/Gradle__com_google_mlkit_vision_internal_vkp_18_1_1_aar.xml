@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.mlkit:vision-internal-vkp:18.1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ac01376d8c7437ea11088b645036aa1a/transformed/jetified-vision-internal-vkp-18.1.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ac01376d8c7437ea11088b645036aa1a/transformed/jetified-vision-internal-vkp-18.1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ac01376d8c7437ea11088b645036aa1a/transformed/jetified-vision-internal-vkp-18.1.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f8d8d610705c5951bbd55bc0399433fe/transformed/jetified-vision-internal-vkp-18.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3490e142024fcd34e4a182a8743d5d7e/transformed/jetified-vision-internal-vkp-18.1.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3490e142024fcd34e4a182a8743d5d7e/transformed/jetified-vision-internal-vkp-18.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3490e142024fcd34e4a182a8743d5d7e/transformed/jetified-vision-internal-vkp-18.1.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.mlkit/vision-internal-vkp/18.1.1/c0d58b8efa926b2c607984c54fb3d274490badd1/vision-internal-vkp-18.1.1-javadoc.jar!/" />

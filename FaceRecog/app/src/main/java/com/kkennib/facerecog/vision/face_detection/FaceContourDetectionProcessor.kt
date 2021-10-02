@@ -1,21 +1,18 @@
 package com.kkennib.facerecog.vision.face_detection
 
-import android.graphics.Path
 import android.graphics.Rect
 import android.media.Image
 import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.Face
-import com.google.mlkit.vision.face.FaceContour
 import com.google.mlkit.vision.face.FaceDetection
 import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.kkennib.facerecog.camerax.BaseImageAnalyzer
 import com.kkennib.facerecog.camerax.GraphicOverlay
-import com.kkennib.facerecog.util.Network
 import java.io.IOException
 
-class FaceContourDetectionProcessor(private val view: GraphicOverlay) :
+class FaceContourDetectionProcessor(private val view: GraphicOverlay, private val action: () -> Unit) :
     BaseImageAnalyzer<List<Face>>() {
 
     private val realTimeOpts = FaceDetectorOptions.Builder()
@@ -48,12 +45,13 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay) :
     ) {
         graphicOverlay.clear()
         results.forEach {
-            Network.sendBoundingBoxPosition(image, it.boundingBox)
+//            Network.sendBoundingBoxPosition(image, it.boundingBox)
             val faceGraphic = FaceContourGraphic(graphicOverlay, it, rect)
             graphicOverlay.add(faceGraphic)
         }
+
         graphicOverlay.postInvalidate()
-        stop()
+//        stop()
     }
 
     override fun onFailure(e: Exception) {
@@ -63,5 +61,4 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay) :
     companion object {
         private const val TAG = "FaceDetectorProcessor"
     }
-
 }

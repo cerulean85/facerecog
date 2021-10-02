@@ -22,7 +22,8 @@ class CameraManager(
     private val context: Context,
     private val finderView: PreviewView,
     private val lifecycleOwner: LifecycleOwner,
-    private val graphicOverlay: GraphicOverlay
+    private val graphicOverlay: GraphicOverlay,
+    private val action: () -> Unit
 ) {
 
     private var preview: Preview? = null
@@ -52,7 +53,7 @@ class CameraManager(
         return when (analyzerVisionType) {
             VisionType.Object -> ObjectDetectionProcessor(graphicOverlay)
             VisionType.OCR -> TextRecognitionProcessor(graphicOverlay)
-            VisionType.Face -> FaceContourDetectionProcessor(graphicOverlay)
+            VisionType.Face -> FaceContourDetectionProcessor(graphicOverlay, action)
             VisionType.Barcode -> BarcodeScannerProcessor(graphicOverlay)
         }
     }

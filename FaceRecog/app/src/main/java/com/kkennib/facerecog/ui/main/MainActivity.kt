@@ -1,30 +1,17 @@
 package com.kkennib.facerecog.ui.main
 
-import android.widget.Toast
 import com.kkennib.facerecog.R
 import com.kkennib.facerecog.databinding.ActivityMainBinding
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Paint
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffXfermode
-import android.media.Image
+import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
-import android.view.OrientationEventListener
+import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageProxy
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.kkennib.facerecog.util.*
-import com.kkennib.facerecog.camerax.CameraManager
-import java.net.Socket
 //import io.socket.client.IO
 //import io.socket.client.Socket
 //import io.socket.client.Socket.EVENT_CONNECT_ERROR
@@ -32,16 +19,9 @@ import java.net.Socket
 //import io.socket.engineio.client.EngineIOException
 //import okhttp3.OkHttpClient
 //import okhttp3.Request
-import java.net.URISyntaxException
-import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
-import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
-import kotlinx.coroutines.delay
-import java.lang.Exception
-import java.lang.Thread.sleep
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import kotlin.concurrent.thread
 
 
 class MainActivity : BaseActivity() {
@@ -56,6 +36,33 @@ class MainActivity : BaseActivity() {
         galleryPath = this@MainActivity.getExternalFilesDir(Environment.DIRECTORY_DCIM)!!.absolutePath
         uuid = UUID.randomUUID().toString()
 
+        val data = ConnData(uuid = uuid)
+        val action = { data: ConnData ->
+            runOnUiThread {
+                tv_user_name.text = data.name
+                tv_user_uuid.text = uuid
+                var profileBitmap = data.profile_bitmap
+                if (profileBitmap != null) {
+                    val matrix = Matrix()
+                    matrix.postRotate(90f)
+                    profileBitmap =
+                        Bitmap.createBitmap(
+                            profileBitmap, 0, 0,
+                            profileBitmap.width, profileBitmap.height, matrix, true
+                        )
+                }
+
+                user_profile_img.setImageBitmap(profileBitmap)
+                Toast.makeText(this@MainActivity, "SUCCESS!!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        val error = { data: ConnData ->
+            runOnUiThread {
+                Toast.makeText(this@MainActivity, data.error_message, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        Network.selectUserInfo(data, action, error)
 
         binding.apply {
             lifecycleOwner = this@MainActivity
@@ -67,7 +74,6 @@ class MainActivity : BaseActivity() {
     private fun initViewModel() {
         viewModel.apply {
             onClickButtonFaceRecogEvent.observe(::getLifecycle) {
-//                Toast.makeText(this@MainActivity, "Example", Toast.LENGTH_LONG).show()
                 val nextIntent = Intent(this@MainActivity, RecogActivity::class.java)
                 startActivity(nextIntent)
             }
@@ -79,8 +85,11 @@ class MainActivity : BaseActivity() {
     }
 
     companion object {
+        var user_id: Int = 0
         var uuid: String = ""
         var galleryPath: String = ""
+        var name: String = ""
+
     }
 
 }

@@ -1,14 +1,13 @@
 package com.kkennib.facerecog.ui.main
 
+import android.R.attr
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Paint
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffXfermode
+import android.graphics.*
 import android.media.Image
 import android.os.Bundle
-import android.util.Log
 import android.view.OrientationEventListener
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -18,11 +17,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.kkennib.facerecog.R
 import com.kkennib.facerecog.camerax.CameraManager
+import com.kkennib.facerecog.camerax.GraphicOverlay
 import com.kkennib.facerecog.databinding.ActivityRecogBinding
 import com.kkennib.facerecog.util.*
-import kotlinx.coroutines.delay
-import java.lang.Exception
-import java.net.Socket
+import com.kkennib.facerecog.vision.face_detection.FaceContourGraphic
+import android.R.attr.bitmap
+
+import android.provider.MediaStore
+import android.util.Base64
+import java.io.ByteArrayOutputStream
+
 
 class RecogActivity : BaseActivity() {
 
@@ -31,7 +35,9 @@ class RecogActivity : BaseActivity() {
     private lateinit var cameraManager: CameraManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        prefs = PreferenceUtil(applicationContext)
         super.onCreate(savedInstanceState)
+
 
         createCameraManager()
         binding.apply {
@@ -48,100 +54,7 @@ class RecogActivity : BaseActivity() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
-
-//        thread(start = true) {
-//
-//            try {
-//                val socket = Socket("192.168.0.21", 5000)
-//                val outStream = socket.outputStream
-//                val inStream = socket.inputStream
-//
-//                val data = "TTEST"
-//                outStream.write(data.toByteArray())
-//                sleep(500)
-//
-//                val available = inStream.available()
-//                print("available" + available)
-//                if (available > 0) {
-//                    val dataArr = ByteArray(available) // 사이즈에 맞게 byte array를 만듭니다.
-//                    inStream.read(dataArr) // byte array에 데이터를 씁니다.
-//                    val data = String(dataArr) // byte array의 데이터를 통해 String을 만듭니다.
-//                    println("data : $data")
-//                }
-//            } catch (e: Exception) {
-//                e.message?.let { Log.e("MainActivity", it) }
-//            }
-//
-//        }
-
-
-//        socketTest()
     }
-
-    suspend fun socketClient() {
-        try {
-            val socket = Socket("192.168.0.21", 5000)
-            val outStream = socket.outputStream
-            val inStream = socket.inputStream
-
-            val data = "TTEST"
-            outStream.write(data.toByteArray())
-            delay(3000L)
-            val available = inStream.available()
-            print("available" + available)
-            if (available > 0) {
-                val dataArr = ByteArray(available) // 사이즈에 맞게 byte array를 만듭니다.
-                inStream.read(dataArr) // byte array에 데이터를 씁니다.
-                val data = String(dataArr) // byte array의 데이터를 통해 String을 만듭니다.
-                println("data : $data")
-            }
-        } catch (e: Exception) {
-            e.message?.let { Log.e("MainActivity", it) }
-        }
-    }
-
-
-//    lateinit var mSocket: Socket
-//    fun socketTest() {
-//
-//        try {
-//            //IO.socket 메소드는 은 저 URL 을 토대로 클라이언트 객체를 Return 합니다.
-//            mSocket = IO.socket("http://192.168.0.21:5000")
-//            mSocket.connect()
-//            Log.d("Connected", "OK")
-//        } catch (e: URISyntaxException) {
-//            Log.e("MainActivity", e.reason)
-//        }
-//
-////        mSocket.on(Socket.EVENT_CONNECT, onConnect);
-//
-//        mSocket.on(io.socket.client.Socket.EVENT_CONNECT) {
-//            // 소켓 서버에 연결이 성공하면 호출됩니다.
-//            Log.i("Socket", "Connect")
-//        }.on(io.socket.client.Socket.EVENT_DISCONNECT) { args ->
-//            // 소켓 서버 연결이 끊어질 경우에 호출됩니다.
-//            Log.i("Socket", "Disconnet: ${args[0]}")
-//        }.on(EVENT_CONNECT_ERROR) { args ->
-//            // 소켓 서버 연결 시 오류가 발생할 경우에 호출됩니다.
-//            var errorMessage = ""
-//            if (args[0] is EngineIOException) {
-////                val err = args[0]
-////                errorMessage = "code: ${err.code}  message: ${err.message}"
-//                Log.e("Fila", "qwfqwf")
-//            }
-//            Log.i("Socket", "Connect Error: $args")
-//        }
-//
-//        // 데이터 전송
-//        // "message"는 소켓 서버에 전달할 Event 명 입니다.
-//        val data = "Hello World"
-//        mSocket?.emit("message", data)
-//
-//    }
-//
-//    val onConnect = Emitter.Listener {
-//        mSocket.emit("message", "messagemessagemessagemessageokok")
-//    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults:
@@ -161,9 +74,9 @@ class RecogActivity : BaseActivity() {
 
     private fun initViewModel() {
         viewModel.apply {
-            onItemSelectedEvent.observe(::getLifecycle) {
-                cameraManager.changeAnalyzer(it)
-            }
+//            onItemSelectedEvent.observe(::getLifecycle) {
+//                cameraManager.changeAnalyzer(it)
+//            }
             onFabButtonEvent.observe(::getLifecycle) {
                 it?.let {
                     binding.fabFinder.transform()
@@ -177,11 +90,19 @@ class RecogActivity : BaseActivity() {
     }
 
     private fun createCameraManager() {
+
+        val action = {
+            runOnUiThread {
+                Toast.makeText(this@RecogActivity, "Test OK!!", Toast.LENGTH_LONG).show()
+            }
+        }
+
         cameraManager = CameraManager(
             this,
             binding.previewViewFinder,
             this,
-            binding.graphicOverlayFinder
+            binding.graphicOverlayFinder,
+            action
         )
     }
 
@@ -190,6 +111,37 @@ class RecogActivity : BaseActivity() {
         Toast.makeText(this, "take a picture!", Toast.LENGTH_SHORT).show()
         setOrientationEvent()
 
+        val action =  { profileImg: Image, boundingBox: Rect ->
+                runOnUiThread {
+                    Toast.makeText(this, "얼굴이 검출되었습니다.", Toast.LENGTH_SHORT).show()
+                    var profileImgBitmap = Utils.mediaImageToBitmap(profileImg)
+                    if (profileImgBitmap != null) {
+                        val matrix = Matrix()
+                        matrix.postRotate(-90f)
+                        profileImgBitmap =
+                            Bitmap.createBitmap(
+                                profileImgBitmap, 0, 0,
+                                profileImgBitmap.width, profileImgBitmap.height, matrix, true
+                            )
+                    }
+
+                    val ostreamProfile = ByteArrayOutputStream()
+                    profileImgBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, ostreamProfile)
+
+                    val nextIntent = Intent(this, EnrolluserActivity::class.java)
+                    RecogActivity.profileByteArr = ostreamProfile.toByteArray()
+                    RecogActivity.boundingBox = boundingBox
+                    startActivity(nextIntent)
+//                    ostreamProfile.close()
+                }
+        }
+
+        val error = {
+            runOnUiThread {
+                Toast.makeText(this, "얼굴을 검출할 수 없습니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         cameraManager.imageCapture.takePicture(
             cameraManager.cameraExecutor,
             object : ImageCapture.OnImageCapturedCallback() {
@@ -197,8 +149,19 @@ class RecogActivity : BaseActivity() {
                     "UnsafeOptInUsageError"
                 )
                 override fun onCaptureSuccess(image: ImageProxy) {
-                    image.image?.let {
-                        imageToBitmapSaveGallery(it)
+                    val graphics = binding.graphicOverlayFinder.graphics
+                    if (graphics.count() == 0) {
+                        error()
+                    } else {
+                        for (graphic: GraphicOverlay.Graphic in graphics) {
+                            val faceGraphic = graphic as FaceContourGraphic
+                            val boundingBox = faceGraphic.face.boundingBox
+
+                            image.image?.let {
+                                imageToBitmapSaveGallery(image.image!!)
+                                action(it, boundingBox)
+                            }
+                        }
                     }
                     super.onCaptureSuccess(image)
                 }
@@ -250,11 +213,14 @@ class RecogActivity : BaseActivity() {
     }
 
     companion object {
+        lateinit var prefs: PreferenceUtil
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(
             android.Manifest.permission.CAMERA,
             android.Manifest.permission.READ_EXTERNAL_STORAGE,
             android.Manifest.permission.WRITE_EXTERNAL_STORAGE
         )
+        lateinit var profileByteArr: ByteArray
+        lateinit var boundingBox: Rect
     }
 }

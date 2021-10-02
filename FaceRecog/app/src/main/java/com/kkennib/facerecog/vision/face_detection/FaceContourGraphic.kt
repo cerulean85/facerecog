@@ -1,6 +1,7 @@
 package com.kkennib.facerecog.vision.face_detection
 
 import android.graphics.*
+import android.media.Image
 import androidx.annotation.ColorInt
 import com.google.mlkit.vision.face.Face
 import com.google.mlkit.vision.face.FaceContour
@@ -8,7 +9,7 @@ import com.kkennib.facerecog.camerax.GraphicOverlay
 
 class FaceContourGraphic(
     overlay: GraphicOverlay,
-    private val face: Face,
+    val face: Face,
     private val imageRect: Rect
 ) : GraphicOverlay.Graphic(overlay) {
 
