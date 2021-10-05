@@ -27,7 +27,7 @@ class EnrolluserActivity : BaseActivity() {
 
             val uuid = MainActivity.uuid
             val boundingBox = RecogActivity.boundingBox
-            var profileByteArr = RecogActivity.profileByteArr
+//            var profileByteArr = RecogActivity.profileByteArr
 //        if (profileImgBitmap != null) {
 //            val matrix = Matrix()
 //            matrix.postRotate(-90f)
@@ -38,13 +38,13 @@ class EnrolluserActivity : BaseActivity() {
 //                )
 //        }
 //        val bmpBytes = profileImg
-            val profileImg = BitmapFactory.decodeByteArray(profileByteArr, 0, profileByteArr.size)
+//            val profileImg = BitmapFactory.decodeByteArray(profileByteArr, 0, profileByteArr.size)
 //            val bmp = intent.getByteArrayExtra("profile_img")?.let {
 //                BitmapFactory.decodeByteArray(intent.getByteArrayExtra("profile_img"), 0,
 //                    it.size)
 //            }
 
-            enroll_user_profile_img.setImageBitmap(profileImg)
+            enroll_user_profile_img.setImageBitmap(RecogActivity.profileBitmap)
             enroll_tv_user_uuid.text = uuid
         }
     }
@@ -55,7 +55,8 @@ class EnrolluserActivity : BaseActivity() {
 
                 val data = ConnData(uuid =MainActivity.uuid, name =enroll_ed_user_name_lb.text.toString())
                 val boundingBox = RecogActivity.boundingBox
-                var profileByteArr = RecogActivity.profileByteArr
+                var profileBitmap = RecogActivity.profileBitmap
+                var faceBitmap = RecogActivity.faceBitmap
                 val action = { data: ConnData ->
                     runOnUiThread {
                         Toast.makeText(this@EnrolluserActivity, "SUCCESS!!", Toast.LENGTH_SHORT).show()
@@ -69,7 +70,7 @@ class EnrolluserActivity : BaseActivity() {
                     }
                 }
 
-                Network.insertUserInfo(profileByteArr, boundingBox, data, action, error)
+                Network.insertUserInfo(profileBitmap, faceBitmap, boundingBox, data, action, error)
             }
         }
     }

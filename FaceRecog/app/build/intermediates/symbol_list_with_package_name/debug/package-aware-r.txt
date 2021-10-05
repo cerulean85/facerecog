@@ -2047,7 +2047,10 @@ id browser_actions_menu_view
 id btn_face_enroll
 id btn_face_enroll_enroll
 id btn_face_recog
-id btn_modify_user_info
+id btn_face_remove
+id btn_test_socket
+id btn_test_socket_connect
+id btn_test_socket_disconnect
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -2154,6 +2157,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id frame_layout
 id frost
 id ghost_view
 id ghost_view_holder
@@ -2186,6 +2190,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id iv_enrolled_user
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -2421,10 +2426,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_similarity
 id tv_user_name
 id tv_user_name_lb
 id tv_user_uuid
 id tv_user_uuid_lb
+id tvlb
 id unchecked
 id uniform
 id unlabeled
@@ -2520,6 +2527,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_enrolluser
 layout activity_main
+layout activity_realtime_recog
 layout activity_recog
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

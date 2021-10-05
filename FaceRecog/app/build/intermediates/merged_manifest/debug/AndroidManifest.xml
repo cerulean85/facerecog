@@ -36,6 +36,9 @@
         android:theme="@style/Theme.FaceRecog"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.kkennib.facerecog.ui.main.RealtimeRecogActivity"
+            android:exported="true" />
+        <activity
             android:name="com.kkennib.facerecog.ui.main.EnrolluserActivity"
             android:exported="true"
             android:label="@string/title_activity_enrolluser"

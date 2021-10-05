@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
 MERGED from [androidx.databinding:databinding-adapters:7.1.0-alpha13] /home/zhkim/.gradle/caches/transforms-3/0eb6e899a7f9e1278487ba582688e28e/transformed/databinding-adapters-7.1.0-alpha13/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-ktx:7.1.0-alpha13] /home/zhkim/.gradle/caches/transforms-3/15cdbe6b1bbba1016f339f01a00f9d25/transformed/jetified-databinding-ktx-7.1.0-alpha13/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:7.1.0-alpha13] /home/zhkim/.gradle/caches/transforms-3/8b7c360a9642d6aa9467ca1f30141902/transformed/databinding-runtime-7.1.0-alpha13/AndroidManifest.xml:17:1-24:12
@@ -121,22 +121,22 @@ MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/zhkim/.gra
 MERGED from [io.grpc:grpc-android:1.28.0] /home/zhkim/.gradle/caches/transforms-3/07bc363a1ac3c9bb019864f632beba9b/transformed/jetified-grpc-android-1.28.0/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/zhkim/.gradle/caches/transforms-3/233e5c1a5f6a05984d450a9342e0f23a/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /home/zhkim/.gradle/caches/transforms-3/7b3bad2f2ad20175dfd76527b548efe7/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:4:5-36
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-46:12
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:1-49:12
 		INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:2:11-69
@@ -177,7 +177,7 @@ ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:12:22-72
 application
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:14:5-44:19
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:14:5-47:19
 MERGED from [com.google.android.material:material:1.4.0] /home/zhkim/.gradle/caches/transforms-3/87eebf8760fbb45e757822f50d210fcc/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /home/zhkim/.gradle/caches/transforms-3/87eebf8760fbb45e757822f50d210fcc/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/zhkim/.gradle/caches/transforms-3/95500583486b171669b231f5100fbb5f/transformed/constraintlayout-2.1.0/AndroidManifest.xml:9:5-20
@@ -280,42 +280,48 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/zhkim/.gradle/cach
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:22:9-47
 	android:usesCleartextTraffic
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:23:9-44
-activity#com.kkennib.facerecog.ui.main.EnrolluserActivity
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:24:9-28:66
-	android:label
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:27:13-62
+activity#com.kkennib.facerecog.ui.main.RealtimeRecogActivity
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:24:9-26:39
 	android:exported
 		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:26:13-36
-	android:theme
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:28:13-63
 	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:25:13-55
-meta-data#com.google.mlkit.vision.DEPENDENCIES
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:30:9-32:48
-	android:value
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:32:13-45
-	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:31:13-64
-activity#com.kkennib.facerecog.ui.main.RecogActivity
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:34:9-59
-	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:34:19-56
-activity#com.kkennib.facerecog.ui.main.MainActivity
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:35:9-43:20
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:25:13-58
+activity#com.kkennib.facerecog.ui.main.EnrolluserActivity
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:27:9-31:66
+	android:label
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:30:13-62
 	android:exported
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:37:13-36
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:29:13-36
+	android:theme
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:31:13-63
 	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:36:13-49
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:28:13-55
+meta-data#com.google.mlkit.vision.DEPENDENCIES
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:33:9-35:48
+	android:value
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:35:13-45
+	android:name
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:34:13-64
+activity#com.kkennib.facerecog.ui.main.RecogActivity
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:37:9-59
+	android:name
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:37:19-56
+activity#com.kkennib.facerecog.ui.main.MainActivity
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:38:9-46:20
+	android:exported
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:40:13-36
+	android:name
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:39:13-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:38:13-42:29
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:39:17-69
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:39:25-66
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:41:17-77
+ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:44:17-77
 	android:name
-		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:41:27-74
+		ADDED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml:44:27-74
 uses-sdk
 INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/zhkim/github/facerecog/FaceRecog/app/src/main/AndroidManifest.xml

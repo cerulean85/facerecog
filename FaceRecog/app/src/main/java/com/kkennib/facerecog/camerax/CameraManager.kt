@@ -1,6 +1,8 @@
 package com.kkennib.facerecog.camerax
 
 import android.content.Context
+import android.graphics.Rect
+import android.media.Image
 import android.util.DisplayMetrics
 import android.util.Log
 import android.util.Size
@@ -23,7 +25,7 @@ class CameraManager(
     private val finderView: PreviewView,
     private val lifecycleOwner: LifecycleOwner,
     private val graphicOverlay: GraphicOverlay,
-    private val action: () -> Unit
+    private val action: (image: Image, imageRect:Rect, boundingBox: Rect) -> Unit
 ) {
 
     private var preview: Preview? = null

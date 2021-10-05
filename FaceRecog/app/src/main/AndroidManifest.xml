@@ -22,6 +22,9 @@
         android:theme="@style/Theme.FaceRecog"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.main.RealtimeRecogActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.main.EnrolluserActivity"
             android:exported="true"
             android:label="@string/title_activity_enrolluser"

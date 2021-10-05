@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.kkennib.facerecog.databinding.ActivityEnrolluserBindingImpl;
 import com.kkennib.facerecog.databinding.ActivityMainBindingImpl;
+import com.kkennib.facerecog.databinding.ActivityRealtimeRecogBindingImpl;
 import com.kkennib.facerecog.databinding.ActivityRecogBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -24,13 +25,16 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYMAIN = 2;
 
-  private static final int LAYOUT_ACTIVITYRECOG = 3;
+  private static final int LAYOUT_ACTIVITYREALTIMERECOG = 3;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
+  private static final int LAYOUT_ACTIVITYRECOG = 4;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.kkennib.facerecog.R.layout.activity_enrolluser, LAYOUT_ACTIVITYENROLLUSER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.kkennib.facerecog.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.kkennib.facerecog.R.layout.activity_realtime_recog, LAYOUT_ACTIVITYREALTIMERECOG);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.kkennib.facerecog.R.layout.activity_recog, LAYOUT_ACTIVITYRECOG);
   }
 
@@ -54,6 +58,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityMainBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_main is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYREALTIMERECOG: {
+          if ("layout/activity_realtime_recog_0".equals(tag)) {
+            return new ActivityRealtimeRecogBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_realtime_recog is invalid. Received: " + tag);
         }
         case  LAYOUT_ACTIVITYRECOG: {
           if ("layout/activity_recog_0".equals(tag)) {
@@ -115,11 +125,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
 
     static {
       sKeys.put("layout/activity_enrolluser_0", com.kkennib.facerecog.R.layout.activity_enrolluser);
       sKeys.put("layout/activity_main_0", com.kkennib.facerecog.R.layout.activity_main);
+      sKeys.put("layout/activity_realtime_recog_0", com.kkennib.facerecog.R.layout.activity_realtime_recog);
       sKeys.put("layout/activity_recog_0", com.kkennib.facerecog.R.layout.activity_recog);
     }
   }

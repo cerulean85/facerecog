@@ -37,6 +37,6 @@ class UserFace(db.Model):
 # for item in result:
 #     print(item.id, item.user_id, item.face_img)
 
-user_info = User.query.filter_by(uuid="tmp_uuid2").first()
-print(user_info)
+# user_info = User.query.filter_by(uuid="tmp_uuid2").first()
+# print(user_info)
 # is_success = len(user_info) > 0

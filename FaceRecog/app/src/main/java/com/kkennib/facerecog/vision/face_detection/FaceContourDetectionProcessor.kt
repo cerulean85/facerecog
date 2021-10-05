@@ -10,9 +10,12 @@ import com.google.mlkit.vision.face.FaceDetection
 import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.kkennib.facerecog.camerax.BaseImageAnalyzer
 import com.kkennib.facerecog.camerax.GraphicOverlay
+import com.kkennib.facerecog.ui.main.RealtimeRecogActivity
+import com.kkennib.facerecog.util.Network
 import java.io.IOException
 
-class FaceContourDetectionProcessor(private val view: GraphicOverlay, private val action: () -> Unit) :
+class FaceContourDetectionProcessor(private val view: GraphicOverlay,
+                                    private val action: (image: Image, imageRect:Rect, boundingBox: Rect) -> Unit) :
     BaseImageAnalyzer<List<Face>>() {
 
     private val realTimeOpts = FaceDetectorOptions.Builder()
@@ -47,6 +50,8 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay, private va
         results.forEach {
 //            Network.sendBoundingBoxPosition(image, it.boundingBox)
             val faceGraphic = FaceContourGraphic(graphicOverlay, it, rect)
+            if(Network.recognitionObjQueue.size == 0)
+                action(image, faceGraphic.imageRect, it.boundingBox)
             graphicOverlay.add(faceGraphic)
         }
 
@@ -60,5 +65,6 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay, private va
 
     companion object {
         private const val TAG = "FaceDetectorProcessor"
+
     }
 }

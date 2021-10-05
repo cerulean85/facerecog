@@ -8,6 +8,92 @@ import java.nio.ByteBuffer
 class Utils {
     companion object {
 
+        fun getProfileBitmap(profileImg: Image, imageRect:Rect, scale:Boolean): Bitmap? {
+            var profileBitmap = Utils.mediaImageToBitmap(profileImg)
+            if (profileBitmap != null) {
+                var matrix = Matrix()
+                matrix.postRotate(-90f)
+                profileBitmap =
+                    Bitmap.createBitmap(
+                        profileBitmap, 0, 0,
+                        profileBitmap.width, profileBitmap.height, matrix, true
+                    )
+
+                if (scale) {
+                    val scaredHeight = imageRect.width()
+                    val resizedRate = scaredHeight / profileBitmap.height.toFloat()
+                    val scaledWidth = profileBitmap.width * resizedRate
+
+                    profileBitmap =
+                        Bitmap.createScaledBitmap(
+                            profileBitmap,
+                            scaledWidth.toInt(),
+                            scaredHeight,
+                            false
+                        )
+                }
+
+                matrix = Matrix()
+                matrix.setScale(-1.0f, 1.0f)
+                profileBitmap =
+                    Bitmap.createBitmap(
+                        profileBitmap, 0, 0,
+                        profileBitmap.width, profileBitmap.height, matrix, true)
+            }
+            return profileBitmap
+        }
+
+        fun getFaceBitmap(profileBitmap: Bitmap, orgWidth: Int, orgHeight: Int, boundingBox: Rect, imageRect: Rect): Bitmap? {
+
+            val scaredHeight = imageRect.width()
+            val resizedRate = scaredHeight / orgHeight.toFloat()
+            val imageRectWidth = imageRect.width()
+            val scaledWidth = orgWidth * resizedRate
+            val diffWidth = imageRectWidth - scaledWidth
+            val boundingResizedRate = scaledWidth / imageRect.height().toFloat()
+            val boundingLeft = boundingBox.left * 0.5
+            val boundingRight = boundingBox.right
+
+            var faceBitmap: Bitmap? = null
+            try {
+                faceBitmap = Bitmap.createBitmap(
+                    profileBitmap, boundingLeft.toInt(), boundingBox.top,
+                    boundingBox.width(), boundingBox.height()
+                )
+            } catch (e: IllegalArgumentException) {
+
+            }
+
+            return faceBitmap
+        }
+
+        fun getRealtimeFaceBitmap(profileBitmap: Bitmap, boundingBox: Rect): Bitmap? {
+
+            var faceBitmap: Bitmap? = null
+            try {
+                faceBitmap = Bitmap.createBitmap(
+                    profileBitmap, boundingBox.left, boundingBox.top,
+                    boundingBox.width(), boundingBox.height()
+                )
+            } catch (e: IllegalArgumentException) {
+
+            }
+
+            return faceBitmap
+        }
+
+        fun getBitmapFromByteArray(byteArr:ByteArray): Bitmap? {
+            return BitmapFactory.decodeByteArray(byteArr, 0, byteArr.size)
+        }
+
+        fun getCompressedBitmapByteArray(bitmap: Bitmap?): ByteArray {
+            val outputStream = ByteArrayOutputStream()
+            bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+            val byteArr = outputStream.toByteArray()
+            outputStream.close()
+            return byteArr
+        }
+
         //https://stackoverflow.com/questions/41773621/camera2-output-to-bitmap
         //private Bitmap convertYUV420888ToNV21_bitmap(Image imgYUV420) {
         fun mediaImageToBitmap(mediaImage: Image): Bitmap? {
@@ -69,8 +155,6 @@ class Utils {
             }
             return byteArray
         }
-
-
     }
 
 }

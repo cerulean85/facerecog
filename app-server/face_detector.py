@@ -1,31 +1,42 @@
-
-
+import gc
+import io
+import PIL
 import cv2
 import numpy as np
 import face_recognition
 
-tolerance = 0.6
-def detect(target_face, known_faces):
-    imgBillGates = face_recognition.load_image_file('billGates.jpg')
-    imgZHKim1 = face_recognition.load_image_file('zhkim1.jpg')
-    imgZHKim2 = face_recognition.load_image_file('zhkim2.jpg')
-
-    imgBillGates = cv2.cvtColor(imgBillGates, cv2.COLOR_BGR2RGB)
-    imgZHKim1 = cv2.cvtColor(imgZHKim1, cv2.COLOR_BGR2RGB)
-    imgZHKim2 = cv2.cvtColor(imgZHKim2, cv2.COLOR_BGR2RGB)
-
-    faceLocBillGates = face_recognition.face_locations(imgBillGates)[0]
-    faceLocZHKim1 = face_recognition.face_locations(imgZHKim1)[0]
-    faceLocZHKim2 = face_recognition.face_locations(imgZHKim2)[0]
-
-    encoderBillGates = face_recognition.face_encodings(imgBillGates)[0]
-    encoderZHKim1 = face_recognition.face_encodings(imgZHKim1)[0]
-    encoderZHKim2 = face_recognition.face_encodings(imgZHKim2)[0]
 
 
-    # result1 = face_recognition.compare_faces([encoderZHKim1], encoderZHKim2)
-    # result2 = face_recognition.compare_faces([encoderZHKim1], encoderBillGates)
-    # 유사도로 결과 확인. 유사할수록 값이 낮게 나옴!!
-    result1 = face_recognition.face_distance([encoderZHKim1], encoderZHKim2)
-    result2 = face_recognition.face_distance([encoderZHKim1], encoderBillGates)
-    print(result1, result2)
+class FaceDetector:
+
+    def detect(self, target_face_bytes, known_faces_bytes):
+
+        similarities = []
+        try:
+            encoded_target_face = self.get_encoded_face_by_numpy(target_face_bytes)
+            encoded_known_faces = []
+            for face in known_faces_bytes:
+                try:
+                    arr0 = self.get_encoded_face_by_numpy(face)
+                    similarity = face_recognition.face_distance([arr0], encoded_target_face)[0]
+                except Exception as e:
+                    similarity = 1.0
+
+                similarities.append(similarity)
+
+            del encoded_target_face
+
+        except Exception as e:
+            print("에러!!", e)
+            similarities = [-1]
+            gc.collect()
+
+        result = min(similarities)
+        return result
+
+    def get_encoded_face_by_numpy(self, src):
+        image = PIL.Image.open(io.BytesIO(src))
+        image_np = np.array(image)
+        converted_image = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
+        encodings = face_recognition.face_encodings(converted_image)
+        return encodings[0]

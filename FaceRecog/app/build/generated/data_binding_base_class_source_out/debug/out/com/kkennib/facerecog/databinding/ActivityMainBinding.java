@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -26,7 +25,16 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final Button btnFaceRecog;
 
   @NonNull
-  public final AppCompatButton btnModifyUserInfo;
+  public final Button btnFaceRemove;
+
+  @NonNull
+  public final Button btnTestSocket;
+
+  @NonNull
+  public final Button btnTestSocketConnect;
+
+  @NonNull
+  public final Button btnTestSocketDisconnect;
 
   @NonNull
   public final TextView tvUserName;
@@ -47,13 +55,16 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   protected MainViewModel mViewModel;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnFaceEnroll, Button btnFaceRecog, AppCompatButton btnModifyUserInfo,
-      TextView tvUserName, TextView tvUserNameLb, TextView tvUserUuid, TextView tvUserUuidLb,
-      ImageView userProfileImg) {
+      Button btnFaceEnroll, Button btnFaceRecog, Button btnFaceRemove, Button btnTestSocket,
+      Button btnTestSocketConnect, Button btnTestSocketDisconnect, TextView tvUserName,
+      TextView tvUserNameLb, TextView tvUserUuid, TextView tvUserUuidLb, ImageView userProfileImg) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnFaceEnroll = btnFaceEnroll;
     this.btnFaceRecog = btnFaceRecog;
-    this.btnModifyUserInfo = btnModifyUserInfo;
+    this.btnFaceRemove = btnFaceRemove;
+    this.btnTestSocket = btnTestSocket;
+    this.btnTestSocketConnect = btnTestSocketConnect;
+    this.btnTestSocketDisconnect = btnTestSocketDisconnect;
     this.tvUserName = tvUserName;
     this.tvUserNameLb = tvUserNameLb;
     this.tvUserUuid = tvUserUuid;

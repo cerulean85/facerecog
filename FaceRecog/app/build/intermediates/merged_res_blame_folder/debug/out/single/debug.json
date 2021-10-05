@@ -56,6 +56,10 @@
         "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/mipmap-xhdpi/ic_macgyver_round.png"
     },
     {
+        "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/merged_res/debug/layout_activity_realtime_recog.xml.flat",
+        "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/layout/activity_realtime_recog.xml"
+    },
+    {
         "merged": "/home/zhkim/github/facerecog/FaceRecog/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/home/zhkim/github/facerecog/FaceRecog/app/src/main/res/drawable/ic_launcher_background.xml"
     },

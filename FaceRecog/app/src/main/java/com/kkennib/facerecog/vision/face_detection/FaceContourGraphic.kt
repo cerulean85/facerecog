@@ -10,7 +10,7 @@ import com.kkennib.facerecog.camerax.GraphicOverlay
 class FaceContourGraphic(
     overlay: GraphicOverlay,
     val face: Face,
-    private val imageRect: Rect
+    val imageRect: Rect
 ) : GraphicOverlay.Graphic(overlay) {
 
     private val facePositionPaint: Paint

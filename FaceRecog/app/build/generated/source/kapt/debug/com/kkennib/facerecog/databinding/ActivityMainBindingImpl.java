@@ -14,11 +14,11 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.user_profile_img, 4);
-        sViewsWithIds.put(R.id.tv_user_name_lb, 5);
-        sViewsWithIds.put(R.id.tv_user_name, 6);
-        sViewsWithIds.put(R.id.tv_user_uuid_lb, 7);
-        sViewsWithIds.put(R.id.tv_user_uuid, 8);
+        sViewsWithIds.put(R.id.user_profile_img, 7);
+        sViewsWithIds.put(R.id.tv_user_name_lb, 8);
+        sViewsWithIds.put(R.id.tv_user_name, 9);
+        sViewsWithIds.put(R.id.tv_user_uuid_lb, 10);
+        sViewsWithIds.put(R.id.tv_user_uuid, 11);
     }
     // views
     @NonNull
@@ -26,27 +26,37 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     // variables
     // values
     // listeners
-    private OnClickListenerImpl mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener;
-    private OnClickListenerImpl1 mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener;
+    private OnClickListenerImpl mViewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener;
+    private OnClickListenerImpl1 mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener;
+    private OnClickListenerImpl2 mViewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener;
+    private OnClickListenerImpl3 mViewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener;
+    private OnClickListenerImpl4 mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener;
+    private OnClickListenerImpl5 mViewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener;
     // Inverse Binding Event Handlers
 
     public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.Button) bindings[1]
             , (android.widget.Button) bindings[2]
             , (android.widget.Button) bindings[3]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[1]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.Button) bindings[5]
+            , (android.widget.Button) bindings[4]
+            , (android.widget.Button) bindings[6]
+            , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.TextView) bindings[11]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.ImageView) bindings[7]
             );
         this.btnFaceEnroll.setTag(null);
         this.btnFaceRecog.setTag(null);
-        this.btnModifyUserInfo.setTag(null);
+        this.btnFaceRemove.setTag(null);
+        this.btnTestSocket.setTag(null);
+        this.btnTestSocketConnect.setTag(null);
+        this.btnTestSocketDisconnect.setTag(null);
         this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -107,19 +117,31 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        android.view.View.OnClickListener viewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener = null;
         android.view.View.OnClickListener viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener = null;
+        android.view.View.OnClickListener viewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener = null;
+        android.view.View.OnClickListener viewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener = null;
         android.view.View.OnClickListener viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener = null;
         com.kkennib.facerecog.ui.main.MainViewModel viewModel = mViewModel;
+        android.view.View.OnClickListener viewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
                 if (viewModel != null) {
+                    // read viewModel::onClickButtonFaceRemove
+                    viewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener = (((mViewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener = new OnClickListenerImpl()) : mViewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener).setValue(viewModel));
                     // read viewModel::onClickButtonFaceEnroll
-                    viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener = (((mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener = new OnClickListenerImpl()) : mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener).setValue(viewModel));
+                    viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener = (((mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener = new OnClickListenerImpl1()) : mViewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener).setValue(viewModel));
+                    // read viewModel::onClickButtonSocketTestDisconnect
+                    viewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener = (((mViewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener = new OnClickListenerImpl2()) : mViewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener).setValue(viewModel));
+                    // read viewModel::onClickButtonSocketTestConnect
+                    viewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener = (((mViewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener = new OnClickListenerImpl3()) : mViewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener).setValue(viewModel));
                     // read viewModel::onClickButtonFaceRecog
-                    viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener = (((mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener = new OnClickListenerImpl1()) : mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener).setValue(viewModel));
+                    viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener = (((mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener = new OnClickListenerImpl4()) : mViewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener).setValue(viewModel));
+                    // read viewModel::onClickButtonSocketTestSend
+                    viewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener = (((mViewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener == null) ? (mViewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener = new OnClickListenerImpl5()) : mViewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener).setValue(viewModel));
                 }
         }
         // batch finished
@@ -128,7 +150,10 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
 
             this.btnFaceEnroll.setOnClickListener(viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener);
             this.btnFaceRecog.setOnClickListener(viewModelOnClickButtonFaceRecogAndroidViewViewOnClickListener);
-            this.btnModifyUserInfo.setOnClickListener(viewModelOnClickButtonFaceEnrollAndroidViewViewOnClickListener);
+            this.btnFaceRemove.setOnClickListener(viewModelOnClickButtonFaceRemoveAndroidViewViewOnClickListener);
+            this.btnTestSocket.setOnClickListener(viewModelOnClickButtonSocketTestSendAndroidViewViewOnClickListener);
+            this.btnTestSocketConnect.setOnClickListener(viewModelOnClickButtonSocketTestConnectAndroidViewViewOnClickListener);
+            this.btnTestSocketDisconnect.setOnClickListener(viewModelOnClickButtonSocketTestDisconnectAndroidViewViewOnClickListener);
         }
     }
     // Listener Stub Implementations
@@ -140,7 +165,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         }
         @Override
         public void onClick(android.view.View arg0) {
-            this.value.onClickButtonFaceEnroll(arg0); 
+            this.value.onClickButtonFaceRemove(arg0); 
         }
     }
     public static class OnClickListenerImpl1 implements android.view.View.OnClickListener{
@@ -151,7 +176,51 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         }
         @Override
         public void onClick(android.view.View arg0) {
+            this.value.onClickButtonFaceEnroll(arg0); 
+        }
+    }
+    public static class OnClickListenerImpl2 implements android.view.View.OnClickListener{
+        private com.kkennib.facerecog.ui.main.MainViewModel value;
+        public OnClickListenerImpl2 setValue(com.kkennib.facerecog.ui.main.MainViewModel value) {
+            this.value = value;
+            return value == null ? null : this;
+        }
+        @Override
+        public void onClick(android.view.View arg0) {
+            this.value.onClickButtonSocketTestDisconnect(arg0); 
+        }
+    }
+    public static class OnClickListenerImpl3 implements android.view.View.OnClickListener{
+        private com.kkennib.facerecog.ui.main.MainViewModel value;
+        public OnClickListenerImpl3 setValue(com.kkennib.facerecog.ui.main.MainViewModel value) {
+            this.value = value;
+            return value == null ? null : this;
+        }
+        @Override
+        public void onClick(android.view.View arg0) {
+            this.value.onClickButtonSocketTestConnect(arg0); 
+        }
+    }
+    public static class OnClickListenerImpl4 implements android.view.View.OnClickListener{
+        private com.kkennib.facerecog.ui.main.MainViewModel value;
+        public OnClickListenerImpl4 setValue(com.kkennib.facerecog.ui.main.MainViewModel value) {
+            this.value = value;
+            return value == null ? null : this;
+        }
+        @Override
+        public void onClick(android.view.View arg0) {
             this.value.onClickButtonFaceRecog(arg0); 
+        }
+    }
+    public static class OnClickListenerImpl5 implements android.view.View.OnClickListener{
+        private com.kkennib.facerecog.ui.main.MainViewModel value;
+        public OnClickListenerImpl5 setValue(com.kkennib.facerecog.ui.main.MainViewModel value) {
+            this.value = value;
+            return value == null ? null : this;
+        }
+        @Override
+        public void onClick(android.view.View arg0) {
+            this.value.onClickButtonSocketTestSend(arg0); 
         }
     }
     // callback impls

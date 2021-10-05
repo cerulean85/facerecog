@@ -1,6 +1,5 @@
 package com.kkennib.facerecog.ui.main
 
-import android.R.attr
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -21,10 +20,6 @@ import com.kkennib.facerecog.camerax.GraphicOverlay
 import com.kkennib.facerecog.databinding.ActivityRecogBinding
 import com.kkennib.facerecog.util.*
 import com.kkennib.facerecog.vision.face_detection.FaceContourGraphic
-import android.R.attr.bitmap
-
-import android.provider.MediaStore
-import android.util.Base64
 import java.io.ByteArrayOutputStream
 
 
@@ -37,7 +32,6 @@ class RecogActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         prefs = PreferenceUtil(applicationContext)
         super.onCreate(savedInstanceState)
-
 
         createCameraManager()
         binding.apply {
@@ -91,10 +85,10 @@ class RecogActivity : BaseActivity() {
 
     private fun createCameraManager() {
 
-        val action = {
-            runOnUiThread {
-                Toast.makeText(this@RecogActivity, "Test OK!!", Toast.LENGTH_LONG).show()
-            }
+        val action = { image: Image, imageRect:Rect, boundingBox: Rect ->
+//            runOnUiThread {
+//                Toast.makeText(this@RecogActivity, "Test OK!!", Toast.LENGTH_LONG).show()
+//            }
         }
 
         cameraManager = CameraManager(
@@ -111,29 +105,34 @@ class RecogActivity : BaseActivity() {
         Toast.makeText(this, "take a picture!", Toast.LENGTH_SHORT).show()
         setOrientationEvent()
 
-        val action =  { profileImg: Image, boundingBox: Rect ->
-                runOnUiThread {
-                    Toast.makeText(this, "얼굴이 검출되었습니다.", Toast.LENGTH_SHORT).show()
-                    var profileImgBitmap = Utils.mediaImageToBitmap(profileImg)
-                    if (profileImgBitmap != null) {
-                        val matrix = Matrix()
-                        matrix.postRotate(-90f)
-                        profileImgBitmap =
-                            Bitmap.createBitmap(
-                                profileImgBitmap, 0, 0,
-                                profileImgBitmap.width, profileImgBitmap.height, matrix, true
-                            )
-                    }
+        val action =  { profileImg: Image, imageRect:Rect, boundingBox: Rect ->
+            runOnUiThread {
+                Toast.makeText(this, "얼굴이 검출되었습니다.", Toast.LENGTH_SHORT).show()
 
-                    val ostreamProfile = ByteArrayOutputStream()
-                    profileImgBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, ostreamProfile)
-
-                    val nextIntent = Intent(this, EnrolluserActivity::class.java)
-                    RecogActivity.profileByteArr = ostreamProfile.toByteArray()
-                    RecogActivity.boundingBox = boundingBox
-                    startActivity(nextIntent)
-//                    ostreamProfile.close()
+                val orgProfileBitmapWidth = profileImg.height
+                val orgProfileBitmapHeight = profileImg.width
+                val profileBitmap = Utils.getProfileBitmap(profileImg, imageRect, true)
+                val profileCompressedBitmapByteArr = Utils.getCompressedBitmapByteArray(profileBitmap)
+                val profileCompressedBitmap = Utils.getBitmapFromByteArray(profileCompressedBitmapByteArr)
+                val faceBitmap = profileCompressedBitmap?.let {
+                    Utils.getFaceBitmap(it, orgProfileBitmapWidth, orgProfileBitmapHeight,
+                        boundingBox, imageRect)
                 }
+                val faceCompressedBitmapByteArr = Utils.getCompressedBitmapByteArray(faceBitmap)
+                val faceCompressedBitmap = Utils.getBitmapFromByteArray(faceCompressedBitmapByteArr)
+
+                if (profileCompressedBitmap != null) {
+                    RecogActivity.profileBitmap = profileCompressedBitmap
+                }
+                if (faceCompressedBitmap != null) {
+                    RecogActivity.faceBitmap = faceCompressedBitmap
+                }
+                RecogActivity.boundingBox = boundingBox
+
+                val nextIntent = Intent(this, EnrolluserActivity::class.java)
+                startActivity(nextIntent)
+
+            }
         }
 
         val error = {
@@ -155,11 +154,11 @@ class RecogActivity : BaseActivity() {
                     } else {
                         for (graphic: GraphicOverlay.Graphic in graphics) {
                             val faceGraphic = graphic as FaceContourGraphic
+                            val imageRect = faceGraphic.imageRect
                             val boundingBox = faceGraphic.face.boundingBox
-
+                            action(image.image!!, imageRect, boundingBox)
                             image.image?.let {
                                 imageToBitmapSaveGallery(image.image!!)
-                                action(it, boundingBox)
                             }
                         }
                     }
@@ -220,7 +219,10 @@ class RecogActivity : BaseActivity() {
             android.Manifest.permission.READ_EXTERNAL_STORAGE,
             android.Manifest.permission.WRITE_EXTERNAL_STORAGE
         )
-        lateinit var profileByteArr: ByteArray
+        //        lateinit var profileByteArr: ByteArray
+//        lateinit var faceByteArr: ByteArray
+        lateinit var profileBitmap: Bitmap
+        lateinit var faceBitmap: Bitmap
         lateinit var boundingBox: Rect
     }
 }
